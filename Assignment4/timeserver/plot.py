@@ -1,6 +1,6 @@
 import subprocess
 
-with open('output.tsv', 'r') as infile, open('comp.txt', 'w') as outfile:
+with open('data.txt', 'r') as infile, open('comp.txt', 'w') as outfile:
     prevLine = infile.next().split("\t")
     for i, line in enumerate(infile, 1):
         if i % 6 == 0:
@@ -10,6 +10,6 @@ with open('output.tsv', 'r') as infile, open('comp.txt', 'w') as outfile:
             thirdCode = (int(thisLine[3]) - int(prevLine[3])) / 60
             outfile.write(str(thisLine[0]) + "\t" + str(firstCode) + "\t" + str(secondCode) + "\t" + str(thirdCode) + "\n")
             prevLine = thisLine
-subprocess.call("./plot.sh")
+# subprocess.call("./plot.sh")
 
 

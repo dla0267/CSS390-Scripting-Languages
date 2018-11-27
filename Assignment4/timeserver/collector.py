@@ -4,14 +4,20 @@ import os.path
 from time import sleep
 
 interval = 10.0
-outpath = 'output.tsv'
+outpath = 'data.txt'
 for num, val in enumerate(sys.argv, start=1):
     if num == len(sys.argv):
         break
+    print(str(num) +" " + val)
     if val == '--interval':
+        print(num + 100000)
+        print(len(sys.argv))
         interval = float(sys.argv[num])
+        print(interval)
 
 address = sys.argv[1] + '/stats'
+
+print(address)
 if os.path.isfile(outpath):
     results = open(outpath, 'a')
 else:

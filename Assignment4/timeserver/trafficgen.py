@@ -40,7 +40,7 @@ while True:
         chance = random.randint(0, 100)
         try:
             if chance in range(0, 6):
-                urllib2.urlopen(url + '/arglebargle')
+                urllib2.urlopen(url + '/yuun')
             elif chance in range(6, 11):
                 urllib2.urlopen(url + '/fail')
             else:
